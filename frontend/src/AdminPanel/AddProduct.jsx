@@ -35,7 +35,7 @@ export default function AddProduct(){
 
 
         try {
-                await axios.post("https://mini-e-commerce-website-h4r3.vercel.app/api/products", 
+                await axios.post("http://localhost:8000/api/products", 
                 formData,
                 {headers:{"Content-Type" : "multipart/form-data"}
                 });

@@ -13,7 +13,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
                             {cart.map((pro)=>(
                             <div key={pro._id} className="cards-addtocart">
                                 <img 
-                                    src={`https://mini-e-commerce-website-h4r3.vercel.app/upload/${pro.image}`}
+                                    src={`http://localhost:8000/upload/${pro.image}`}
                                     alt="img"
                                 />
                                 <h3>{pro.name}</h3>

@@ -24,7 +24,7 @@ export default function UpdateProduct(){
         const fetchProduct = async()=>{
           
             try{
-                const res = await axios.get(`https://mini-e-commerce-website-h4r3.vercel.app/api/products/${id}`)
+                const res = await axios.get(`http://localhost:8000/api/products/${id}`)
                 const product = res.data;
 
                 setName(product.name);
@@ -63,7 +63,7 @@ export default function UpdateProduct(){
         if (image) formData.append("image", image); // only append if user selected a new file
 
         try{
-            await axios.put(`https://mini-e-commerce-website-h4r3.vercel.app/api/products/${id}`,
+            await axios.put(`http://localhost:8000/api/products/${id}`,
                 formData,
                 {headers:{"Content-Type": "multipart/form-data"},
             });
@@ -151,7 +151,7 @@ export default function UpdateProduct(){
                             {currentImage && (
                                 <div>
                                     <img 
-                                    src={`https://mini-e-commerce-website-h4r3.vercel.app/upload/${currentImage}`} width="100" alt="Current" />
+                                    src={`http://localhost:8000/upload/${currentImage}`} width="100" alt="Current" />
                                 </div>
                             )}
                             <input 
