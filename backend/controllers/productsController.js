@@ -1,0 +1,136 @@
+//controllers/productsController.js
+
+const fs= require("fs");
+const path = require("path");
+const products = require("../models/productModel");
+
+//fetch all products list
+
+exports.getAllProducts =async(req,res)=>{
+
+    try{
+           const allProducts = await products.find();
+           res.status(200).json(allProducts)
+    }
+    catch(error){
+          res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+// create a new product list
+
+exports.createProduct = async (req,res)=>{
+
+    try{
+        const{name,description,price,category,stock}=req.body;
+        
+        // const image = req.file ? req.file.filename : null; 
+
+        if(!req.file) 
+            return res.status(400).json({message:"Image is required"});
+
+        const newProduct = await products.create({
+        name,
+        description,
+        price,
+        category,
+        stock,
+        image: req.file.filename,
+        });
+
+        res.status(201).json({message:`Product added successfully`, product : newProduct})
+    }
+    catch(error){
+        console.error(error);
+        res.status(500).json({message:error.message});
+    }
+
+}
+
+// find the specific product
+
+exports.findProduct = async(req,res) =>{
+    try{
+        const product= await products.findById(req.params.id);
+        if(!product)
+            return res.status(404).json({message: "Product not found"});
+        res.json(product)
+    }
+    catch(error){
+        res.status(500).json({message:error.message})
+    }
+}
+
+// Update the specific product
+
+// exports.updateProduct = async(req,res)=>{
+//     try{
+//        const updated = await products.findByIdAndUpdate(req.params.id, req.body, {new:true});
+//        res.json(updated);
+//     }
+//     catch(error){
+//        res.status(400).json({message:error.message});
+//     }
+// }
+
+exports.updateProduct = async(req, res)=>{
+    try{
+        const product = await products.findById(req.params.id);
+
+        if(!product) return res.status(404).json({message: "Product not found"});
+  
+        const{name,description,price,category,stock}=req.body;
+
+        if(req.file){
+            //Delete old images from upload folder
+            const oldImagepath = path.join(__dirname, "../upload", product.image);
+            if(fs.existsSync(oldImagepath)) fs.unlinkSync(oldImagepath);
+            product.image = req.file.filename;
+        }
+
+        product.name = name || product.name;
+        product.description = description || product.description;
+        product.price = price || product.price;
+        product.category = category || product.category;
+        product.stock = stock || product.stock;
+
+        await product.save();
+        res.json(product);
+    }
+    catch(error){
+        res.status(400).json({message:error.message});
+    }
+};
+
+
+
+// Delete the specific product
+
+// exports.deleteProduct = async (req, res) =>{
+//     try{
+//         const deleted = await products.findByIdAndDelete(req.params.id);
+//         res.json(deleted);
+//     }
+//     catch(error){
+//        res.status(500).json({message:error.message})
+//     }
+// }
+
+exports.deleteProduct = async (req, res) => {
+    try {
+        const product = await products.findById(req.params.id);
+        if (!product) return res.status(404).json({ message: "Product not found" });
+
+        // Delete image from upload folder
+        if (product.image) {
+            const imagePath = path.join(__dirname, "../upload", product.image);
+            if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
+        }
+
+        await products.findByIdAndDelete(req.params.id);
+        res.json({ message: "Product deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
