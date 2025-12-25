@@ -14,6 +14,12 @@ app.use(express.json());
 app.use(cors());
 app.use("/upload",express.static("upload"))
 
+
+app.get("/", (req, res) => {
+  res.send("API is running successfully 🚀");
+});
+
+
 app.use("/api/products", productRoutes);
 
 const PORT = process.env.PORT || 5000
