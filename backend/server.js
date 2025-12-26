@@ -13,11 +13,11 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://mini-e-commerce-website-frontend.onrender.com/",
+  origin: "https://mini-e-commerce-website-frontend.onrender.com",
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true 
  }));
- 
+
 // app.use("/upload",express.static("upload"))
 
 
