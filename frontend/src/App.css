@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -146,19 +146,34 @@
 
   .logo{
     display: flex;
-    font-size: medium;
+    font-size: small;
     align-items: center;
   }
 
   .top-bar{
      margin-top: 40px;
+     padding: 0 10px;
+
+  }
+  .product-container{
+    padding-top: 50px;      
+    gap: 15px;
+  }
+
+  .product-cards {
+    width: 45%;            
+    padding: 10px;
+  }
+
+  .product-cards img {
+    height: 120px;
   }
 }
 
 /* ***********Top Bar*********** */
 
 .top-bar {
-  position: relative;
+  position: fixed;
   top: 0;         
   left: 0;
   width: 100%;
@@ -189,7 +204,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  padding: 60px;
+  padding-top: 60px;
 }
 
 .product-cards {
