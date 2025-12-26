@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo1.jpg";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
  
 export default function Nav({cart,setSearchTerm}) {
@@ -10,7 +10,10 @@ export default function Nav({cart,setSearchTerm}) {
 
     return (
         <div className="navbar">
+          <>
           <img src={logo} alt="logo" />
+          <h2>SnappyCart</h2>
+          </>
           <div className="search">
             <input 
               type="text" 

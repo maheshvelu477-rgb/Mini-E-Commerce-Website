@@ -18,6 +18,8 @@
   color: white;
 }
 
+ 
+
 /* .body, .product-container, .addtocart-container, .admin-main, .addproduct-container {
   padding-top: 70px; /* adjust if your navbar height changes 
  */
@@ -58,6 +60,7 @@
 }
 
 .addtocart {
+  position: fixed;
   background: none;
   border: none;
   color: white;
@@ -123,7 +126,7 @@
   .addtocart {
     font-size: 18px;
     margin-right: 10px;
-  }
+   }
 
   .navbar button:last-child {
     padding: 6px 12px;
@@ -134,10 +137,14 @@
 /* ***********Top Bar*********** */
 
 .top-bar {
+  position: fixed;
+  top: 70px;         /* below navbar */
+  left: 0;
+  width: 100%;
   background-color: #f5f5f5;
   padding: 10px 0;
+  z-index: 900;
 }
-
 .nav-links {
   display: flex;
   justify-content: center;
@@ -208,6 +215,7 @@
   padding: 40px 60px;
   text-align: center;
   margin: auto;
+  padding-top: 160px;
  }
 
 .addtocart-container h1 {
@@ -291,6 +299,7 @@
 .continue-shoppingBtn {
   text-decoration: none;
   color: #ff3f6c;
+  font-size: large;
 }
 
 

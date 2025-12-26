@@ -8,7 +8,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
     return(
         <>
             <div className="addtocart-container">
-                <h1>Add to Cart Page</h1>
+                <h1>Your SnappyCart</h1>
                      {total > 0 ? 
                        (<div className="container-addtocart">
                             {cart.map((pro)=>(
@@ -36,7 +36,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
                             ))}
                         </div>) : (
                         <>
-                        <img style={{width:"300px", height:"300px"}} src={image} alt="img"/>    
+                        <img style={{width:"300px", height:"300px", marginTop:"20px"}} src={image} alt="img"/>    
                         <h3>No products</h3>
                         </>
                         )   
