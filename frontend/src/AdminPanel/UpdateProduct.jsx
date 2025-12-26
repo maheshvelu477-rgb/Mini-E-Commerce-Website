@@ -60,7 +60,7 @@ export default function UpdateProduct(){
         formData.append("category", category);
         formData.append("stock", stock);
  
-        if (image) formData.append("image", image); // only append if user selected a new file
+        if (image) formData.append("image", image); 
 
         try{
             await axios.put(` https://mini-e-commerce-website-backend.onrender.com/api/products/${id}`,

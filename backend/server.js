@@ -4,7 +4,6 @@ const connectDB = require("./config/db");
 const productRoutes = require("./routes/productRoute");
 const cors = require("cors");
 
-// const upload = require("./middleware/upload");
 
 dotenv.config();
 connectDB();
@@ -18,7 +17,6 @@ app.use(cors({
   credentials: true 
  }));
 
-// app.use("/upload",express.static("upload"))
 
 
 app.get("/", (req, res) => {

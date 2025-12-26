@@ -140,7 +140,6 @@ export default function AddProduct(){
                             <label htmlFor="image">Product Image : </label>
                             <input 
                             type="file" 
-                            // placeholder="Upload product image" 
                             onChange={(e)=>setImage(e.target.files[0])}
                             id="image"
                             required

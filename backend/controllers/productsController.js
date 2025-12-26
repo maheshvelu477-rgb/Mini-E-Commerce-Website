@@ -1,8 +1,5 @@
 //controllers/productsController.js
 
-// const fs= require("fs");
-// const path = require("path");
-
 const products = require("../models/productModel");
 
 //fetch all products list
@@ -25,8 +22,6 @@ exports.createProduct = async (req,res)=>{
     try{
         const{name,description,price,category,stock}=req.body;
         
-        // const image = req.file ? req.file.filename : null; 
-
         if(!req.file) 
             return res.status(400).json({message:"Image is required"});
 
@@ -64,16 +59,6 @@ exports.findProduct = async(req,res) =>{
 
 // Update the specific product
 
-// exports.updateProduct = async(req,res)=>{
-//     try{
-//        const updated = await products.findByIdAndUpdate(req.params.id, req.body, {new:true});
-//        res.json(updated);
-//     }
-//     catch(error){
-//        res.status(400).json({message:error.message});
-//     }
-// }
-
 exports.updateProduct = async(req, res)=>{
     try{
         const product = await products.findById(req.params.id);
@@ -84,10 +69,6 @@ exports.updateProduct = async(req, res)=>{
 
         if(req.file){
             product.image = req.file.path;
-            //Delete old images from upload folder
-            // const oldImagepath = path.join(__dirname, "../upload", product.image);
-            // if(fs.existsSync(oldImagepath)) fs.unlinkSync(oldImagepath);
-            // product.image = req.file.filename;
         }
 
         product.name = name || product.name;
@@ -108,26 +89,11 @@ exports.updateProduct = async(req, res)=>{
 
 // Delete the specific product
 
-// exports.deleteProduct = async (req, res) =>{
-//     try{
-//         const deleted = await products.findByIdAndDelete(req.params.id);
-//         res.json(deleted);
-//     }
-//     catch(error){
-//        res.status(500).json({message:error.message})
-//     }
-// }
-
 exports.deleteProduct = async (req, res) => {
     try {
         const product = await products.findById(req.params.id);
+        
         if (!product) return res.status(404).json({ message: "Product not found" });
-
-        // Delete image from upload folder
-        // if (product.image) {
-        //     const imagePath = path.join(__dirname, "../upload", product.image);
-        //     if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
-        // }
 
         await products.findByIdAndDelete(req.params.id);
         res.json({ message: "Product deleted successfully" });
