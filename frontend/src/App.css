@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  position: fixed; /* stick to top */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -154,8 +154,8 @@
 /* ***********Top Bar*********** */
 
 .top-bar {
-  position: fixed;
-  top: 70px;         /* below navbar */
+  position: absolute;
+  top: 0;         
   left: 0;
   width: 100%;
   background-color: #f5f5f5;
