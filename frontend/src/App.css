@@ -271,15 +271,16 @@
   }
 
   .product-container {
-    padding-top: 100px; /* navbar + topbar height */
+    padding-top: 100px;  
     gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .product-cards {
     width: 45%;
     padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+   
   }
 
   .product-cards img {
