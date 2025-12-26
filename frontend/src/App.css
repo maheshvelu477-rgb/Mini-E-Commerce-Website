@@ -237,6 +237,11 @@
     padding: 8px 16px;
     height: 50px;
   }
+  .logo{
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+  }
 
   .navbar img {
     width: 30px;
@@ -273,6 +278,9 @@
 
   .nav-links li {
     font-size: smaller;
+    justify-content: center;
+    gap: 20px;
+
   }
 
   .product-container {
