@@ -241,6 +241,7 @@
     font-size: smaller;
     display: flex;
     align-items: center;
+    padding: 8px;
   }
 
   .navbar img {
