@@ -10,7 +10,7 @@ export default function Admin() {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(" https://mini-e-commerce-website-backend.onrender.com/api/products");
+      const res = await axios.get("https://mini-e-commerce-website-backend.onrender.com/api/products");
       setProducts(res.data);
     } catch (error) {
       console.error(error.message);
@@ -26,7 +26,7 @@ export default function Admin() {
     if (!window.confirm(`Are you sure you want to delete ${product.name}?`)) return;
 
     try {
-      await axios.delete(` https://mini-e-commerce-website-backend.onrender.com/api/products/${product._id}`);
+      await axios.delete(`https://mini-e-commerce-website-backend.onrender.com/api/products/${product._id}`);
       fetchProducts();
     } catch (error) {
       alert("Failed to delete product");
@@ -72,7 +72,7 @@ export default function Admin() {
                 <span>{product.category}</span>
                 <span>{product.stock}</span>
                 <span>
-                  <img src={` https://mini-e-commerce-website-backend.onrender.com/upload/${product.image}`} alt={product.name} />
+                  <img src={product.image} alt={product.name} />
                 </span>
                 <span className="actions">
                   <Link to={`/update/${product._id}`}><button className="update-btn">Update</button></Link>

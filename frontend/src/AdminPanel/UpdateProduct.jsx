@@ -24,7 +24,7 @@ export default function UpdateProduct(){
         const fetchProduct = async()=>{
           
             try{
-                const res = await axios.get(` https://mini-e-commerce-website-backend.onrender.com/api/products/${id}`)
+                const res = await axios.get(`https://mini-e-commerce-website-backend.onrender.com/api/products/${id}`)
                 const product = res.data;
 
                 setName(product.name);
@@ -64,9 +64,9 @@ export default function UpdateProduct(){
 
         try{
             await axios.put(` https://mini-e-commerce-website-backend.onrender.com/api/products/${id}`,
-                formData,
-                {headers:{"Content-Type": "multipart/form-data"},
-            });
+                formData
+                // {headers:{"Content-Type": "multipart/form-data"},}
+            );
             alert("Product updated successfully")
 
             navigate("/admin");
@@ -151,7 +151,7 @@ export default function UpdateProduct(){
                             {currentImage && (
                                 <div>
                                     <img 
-                                    src={` https://mini-e-commerce-website-backend.onrender.com/upload/${currentImage}`} width="100" alt="Current" />
+                                    src={currentImage} width="100" alt="Current" />
                                 </div>
                             )}
                             <input 

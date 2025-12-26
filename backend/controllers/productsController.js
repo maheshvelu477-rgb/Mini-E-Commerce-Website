@@ -1,7 +1,8 @@
 //controllers/productsController.js
 
-const fs= require("fs");
-const path = require("path");
+// const fs= require("fs");
+// const path = require("path");
+
 const products = require("../models/productModel");
 
 //fetch all products list
@@ -35,7 +36,7 @@ exports.createProduct = async (req,res)=>{
         price,
         category,
         stock,
-        image: req.file.filename,
+        image: req.file.path || req.file.filename || req.file.url
         });
 
         res.status(201).json({message:`Product added successfully`, product : newProduct})
@@ -82,10 +83,11 @@ exports.updateProduct = async(req, res)=>{
         const{name,description,price,category,stock}=req.body;
 
         if(req.file){
+            product.image = req.file.path;
             //Delete old images from upload folder
-            const oldImagepath = path.join(__dirname, "../upload", product.image);
-            if(fs.existsSync(oldImagepath)) fs.unlinkSync(oldImagepath);
-            product.image = req.file.filename;
+            // const oldImagepath = path.join(__dirname, "../upload", product.image);
+            // if(fs.existsSync(oldImagepath)) fs.unlinkSync(oldImagepath);
+            // product.image = req.file.filename;
         }
 
         product.name = name || product.name;
@@ -122,10 +124,10 @@ exports.deleteProduct = async (req, res) => {
         if (!product) return res.status(404).json({ message: "Product not found" });
 
         // Delete image from upload folder
-        if (product.image) {
-            const imagePath = path.join(__dirname, "../upload", product.image);
-            if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
-        }
+        // if (product.image) {
+        //     const imagePath = path.join(__dirname, "../upload", product.image);
+        //     if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
+        // }
 
         await products.findByIdAndDelete(req.params.id);
         res.json({ message: "Product deleted successfully" });

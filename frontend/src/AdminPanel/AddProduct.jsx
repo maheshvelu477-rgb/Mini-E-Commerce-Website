@@ -35,10 +35,10 @@ export default function AddProduct(){
 
 
         try {
-                await axios.post(" https://mini-e-commerce-website-backend.onrender.com/api/products", 
+                await axios.post("https://mini-e-commerce-website-backend.onrender.com/api/products", 
                 formData,
-                {headers:{"Content-Type" : "multipart/form-data"}
-                });
+                // {headers:{"Content-Type" : "multipart/form-data"}}
+                );
             
 
                 alert("product added successfully");
@@ -79,7 +79,7 @@ export default function AddProduct(){
                     </h1>
                     <form className="addproduct-form" onSubmit={handleSubmit}>
                         <div className="input-fields">
-                            <label for="name">Product Name : </label>
+                            <label htmlFor="name">Product Name : </label>
                             <input type="text" 
                             placeholder="Product name" 
                             onChange={(e)=>setName(e.target.value)}
@@ -89,29 +89,32 @@ export default function AddProduct(){
                             />
                         </div>
                         <div className="input-fields">
-                            <label>Description : </label>
+                            <label htmlFor="description">Description : </label>
                             <input type="text" 
                             placeholder="Description" 
                             onChange={(e)=>setDescription(e.target.value)}
                             value={description}
+                            id="description"
                             required
                             />
                         </div> 
                         <div className="input-fields">
-                            <label>Price : </label>
+                            <label htmlFor="price">Price : </label>
                             <input 
                             type="number" 
                             placeholder="Price" 
                             onChange={(e)=>setPrice(e.target.value)}
                             value={price}
+                            id="price"
                             required
                             />
                         </div> 
                         <div className="input-fields">
-                            <label>Category : </label>
+                            <label htmlFor="category">Category : </label>
                             <select className="selection"
                             onChange={(e)=>setCategory(e.target.value)}
                             value={category}
+                            id="category"
                             required
                             >
                                 <option value="">Select Category</option>
@@ -123,21 +126,23 @@ export default function AddProduct(){
                             </select>
                         </div> 
                         <div className="input-fields">
-                            <label>Stock Quantity : </label>
+                            <label htmlFor="qty">Stock Quantity : </label>
                             <input 
                             type="number" 
                             placeholder="aavailable qty" 
                             onChange={(e)=>setStock(e.target.value)}
                             value={stock}
+                            id="qty"
                             required
                             />
                         </div>
                         <div className="input-fields">
-                            <label>Product Image : </label>
+                            <label htmlFor="image">Product Image : </label>
                             <input 
                             type="file" 
                             // placeholder="Upload product image" 
                             onChange={(e)=>setImage(e.target.files[0])}
+                            id="image"
                             required
                             />
                         </div>
