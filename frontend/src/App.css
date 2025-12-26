@@ -308,10 +308,12 @@
 
   .product-cards img {
     height: 40vh;
+    margin-top: -20px;
   }
 
   .product-cards h3{
     font-size: smaller;
+    margin-top: -20px;
   }
 
   .product-cards button{
