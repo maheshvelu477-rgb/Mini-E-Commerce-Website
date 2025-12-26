@@ -278,7 +278,6 @@
   }
 
   .product-cards {
-    width: 45%;
     padding: 10px;
     max-height: fit-content;
    
@@ -287,7 +286,7 @@
   .product-cards img {
     height: 40vh;
   }
-  
+
   .product-cards h3{
     font-size: smaller;
   }
