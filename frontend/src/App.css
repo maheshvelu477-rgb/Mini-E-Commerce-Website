@@ -120,6 +120,7 @@
   cursor: pointer;
   font-weight: 600;
   color: #333;
+  
 }
 
 .nav-links li:hover {
@@ -268,6 +269,10 @@
 
   .top-bar {
     top: 50px;
+  }
+
+  .nav-links li {
+    font-size: smaller;
   }
 
   .product-container {
