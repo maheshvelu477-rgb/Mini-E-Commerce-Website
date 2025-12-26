@@ -17,7 +17,7 @@ export default function Nav({cart,setSearchTerm}) {
           <div className="search">
             <input 
               type="text" 
-              placeholder="Search your products" 
+              placeholder="Search your products ...." 
               onChange={(e)=>setTemp(e.target.value)}
               onKeyDown={(e)=>{
                 if(e.key === "Enter"){
