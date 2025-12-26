@@ -5,9 +5,12 @@
   font-family: Arial, sans-serif;
 }
 
-/* ***************Navbar************** */
-
 .navbar {
+  position: fixed; /* stick to top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   align-items: center;
   padding: 12px 40px;
@@ -15,9 +18,15 @@
   color: white;
 }
 
+/* .body, .product-container, .addtocart-container, .admin-main, .addproduct-container {
+  padding-top: 70px; /* adjust if your navbar height changes 
+ */
+
+/* ***************Navbar************** */
+
 .navbar img {
-  width: 40px;
-   margin-right: 40px;
+  width: 50px;
+  margin-right: 40px;
   height: auto;
   cursor: pointer;
 }
@@ -30,27 +39,29 @@
 }
 
 .search input {
-  padding: 8px 12px;
-  width: 280px;
+  padding: 9px 14px;
+  width: 320px;
   border: none;
   outline: none;
   border-radius: 4px 0 0 4px;
+  font-size: 16px;
 }
 
 .search button {
-  padding: 8px 14px;
+  padding: 10px 16px;
   border: none;
   cursor: pointer;
   background-color: #ff3f6c;
   color: white;
   border-radius: 0 4px 4px 0;
+  font-size: 16px;
 }
 
 .addtocart {
   background: none;
   border: none;
   color: white;
-  font-size: 22px;
+  font-size: 40px;
   position: relative;
   cursor: pointer;
   margin-right: 30px;   
@@ -73,18 +84,52 @@
 }
 
 .navbar button:last-child {
-  padding: 8px 16px;
+  padding: 40px 16px;
   background-color: #ff3f6c;
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  font-size: large;
 }
 
 .navbar button:last-child {
   padding: 8px 16px;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 16px;
+  }
+
+  .navbar img {
+    width: 30px;
+    margin-right: 20px;
+  }
+
+  .search {
+    margin-right: 10px;
+  }
+
+  .search input {
+    width: 150px;
+    padding: 6px 8px;
+  }
+
+  .search button {
+    padding: 6px 10px;
+  }
+
+  .addtocart {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  .navbar button:last-child {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
 
 /* ***********Top Bar*********** */
 
@@ -166,10 +211,13 @@
  }
 
 .addtocart-container h1 {
-  margin-bottom: 30px;
+  margin-top: 50px;
 }
 .addtocart-container p{
-  margin-top: 40px;
+  margin-top: 30px;
+}
+.addtocart-container h3{
+  margin-top: 60px;
 }
 
 .container-addtocart {

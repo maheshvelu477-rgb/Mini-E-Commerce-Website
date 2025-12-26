@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import image from "../assets/image1.jpg";
 
 export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, removeProduct}){
        
@@ -8,7 +9,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
         <>
             <div className="addtocart-container">
                 <h1>Add to Cart Page</h1>
-                    {total > 0 ? 
+                     {total > 0 ? 
                        (<div className="container-addtocart">
                             {cart.map((pro)=>(
                             <div key={pro._id} className="cards-addtocart">
@@ -34,9 +35,13 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
                             </div>
                             ))}
                         </div>) : (
-                        <div>No products</div>)    
+                        <>
+                        <img style={{width:"300px", height:"300px"}} src={image} alt="img"/>    
+                        <h3>No products</h3>
+                        </>
+                        )   
                     }
-                <p><Link to="/" className="continue-shoppingBtn"> Continue browsing <span>{"\u2192"}</span></Link></p>
+                 <p><Link to="/" className="continue-shoppingBtn"> Continue browsing <span>{"\u2192"}</span></Link></p>
             </div>
         </>
     )

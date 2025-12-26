@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/vite.svg";
+import logo from "../assets/logo1.jpg";
 import { Link } from "react-router-dom";
  
 export default function Nav({cart,setSearchTerm}) {
