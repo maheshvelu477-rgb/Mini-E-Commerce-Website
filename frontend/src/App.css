@@ -278,6 +278,8 @@
   .product-cards {
     width: 45%;
     padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .product-cards img {
