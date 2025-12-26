@@ -1,4 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Nav from "./components/Nav";
 import ProductList from "./components/ProductList";
 import TopBar from "./components/TopBar";
@@ -46,12 +48,15 @@ function App() {
           item._id === product._id ? {...item, qty: item.qty+1} : item // Increament 
         )
       )
-      
+      toast.success("Product successfully added to cart");
+
+ 
+    }
+    else{
+      setCart(prevCart =>[...prevCart, {...product, qty:1}]);
+        toast.success("Product successfully added to cart");
+    }
   }
-  else{
-    setCart(prevCart =>[...prevCart, {...product, qty:1}]);
-  }
-}
 
 
 // Decreament
@@ -64,16 +69,18 @@ function App() {
     .filter(item => item.qty > 0)
 
   )
+
  
 }
 
-//Delete 
+//Remove product from the Addtocart page 
 
 const removeProduct = (productId) =>{
   setCart(prevCart=>
     prevCart.filter(item=>item._id !== productId)
   )
   // localStorage.removeItem("addtocart")
+  toast.success("Product removed from cart successfully");
 
   }
 
@@ -82,7 +89,7 @@ const removeProduct = (productId) =>{
      
     <BrowserRouter>
 
-               
+       <ToastContainer />        
        <main className="main-content">
        <Routes>
             <Route path="/" element={

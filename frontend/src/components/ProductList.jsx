@@ -29,11 +29,8 @@ export default function ProductList({handleAddToCart, selectedCategory,searchTer
  
 
     const filteredProducts = Products.filter((product) => {
-  const matchCategory =
-    !selectedCategory || product.category === selectedCategory;
-
-  const matchSearch =
-    product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchCategory = !selectedCategory || product.category === selectedCategory;
+    const matchSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
 
   return matchCategory && matchSearch;
 });
