@@ -10,10 +10,10 @@ export default function Nav({cart,setSearchTerm}) {
 
     return (
         <div className="navbar">
-          <>
-          <img src={logo} alt="logo" />
-          <h2>SnappyCart</h2>
-          </>
+          <div className="logo" >
+            <img src={logo} alt="logo" />
+            <h2>SnappyCart</h2>
+          </div>
           <div className="search">
             <input 
               type="text" 
