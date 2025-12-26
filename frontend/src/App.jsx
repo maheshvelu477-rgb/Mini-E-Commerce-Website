@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
 import ProductList from "./components/ProductList";
 import TopBar from "./components/TopBar";
@@ -80,7 +80,7 @@ const removeProduct = (productId) =>{
   return (
     <>
      
-    <BrowserRouter>
+    <HashRouter>
 
                
        <main className="main-content">
@@ -117,7 +117,7 @@ const removeProduct = (productId) =>{
        </Routes>
        </main>    
            
-    </BrowserRouter>
+    </HashRouter>
 
     
 
