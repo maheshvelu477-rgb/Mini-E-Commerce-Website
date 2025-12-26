@@ -284,7 +284,11 @@
   }
 
   .product-cards img {
-    height: 120px;
+    height: 40vh;
+  }
+  .product-cards button{
+    font-size: smaller;
+    padding: 5px 10px;
   }
 }
 
