@@ -17,7 +17,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
                                     src={pro.image}
                                     alt={pro.name}
                                 />
-                                <h3>{pro.name}</h3>
+                                <p>{pro.name}</p>
                                 <h3>${pro.price}</h3>
                                 <div className="quanity-change">
                                     <button onClick={()=>handleAddToCart(pro)}>+</button> 
