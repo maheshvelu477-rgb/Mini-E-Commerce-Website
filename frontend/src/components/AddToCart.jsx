@@ -13,7 +13,7 @@ export default function AddToCart({cart =[],handleDecrementQty,handleAddToCart, 
                             {cart.map((pro)=>(
                             <div key={pro._id} className="cards-addtocart">
                                 <img 
-                                    src={`https://mini-e-commerce-website4.onrender.com/upload/${pro.image}`}
+                                    src={` https://mini-e-commerce-website-backend.onrender.com/upload/${pro.image}`}
                                     alt="img"
                                 />
                                 <h3>{pro.name}</h3>

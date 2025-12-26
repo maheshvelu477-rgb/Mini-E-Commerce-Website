@@ -35,7 +35,7 @@ export default function AddProduct(){
 
 
         try {
-                await axios.post("https://mini-e-commerce-website4.onrender.com/api/products", 
+                await axios.post(" https://mini-e-commerce-website-backend.onrender.com/api/products", 
                 formData,
                 {headers:{"Content-Type" : "multipart/form-data"}
                 });

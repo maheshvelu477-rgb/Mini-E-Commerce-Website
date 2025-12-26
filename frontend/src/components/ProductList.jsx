@@ -14,7 +14,7 @@ export default function ProductList({handleAddToCart, selectedCategory,searchTer
         const fetchProducts = async()=>{
 
             try{
-                const res = await axios.get("https://mini-e-commerce-website4.onrender.com/api/products");
+                const res = await axios.get(" https://mini-e-commerce-website-backend.onrender.com/api/products");
                 setProducts(res.data)
             }
             catch(error){
@@ -45,7 +45,7 @@ export default function ProductList({handleAddToCart, selectedCategory,searchTer
                     filteredProducts.map((product) => (
                     <div className="product-cards" key={product._id}>
                         <img
-                        src={`https://mini-e-commerce-website4.onrender.com/upload/${product.image}`}
+                        src={` https://mini-e-commerce-website-backend.onrender.com/upload/${product.image}`}
                         alt={product.name}
                         />
                         <h3>{product.name}</h3>
