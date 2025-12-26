@@ -271,12 +271,13 @@
   .cards-addtocart{
     display: flex;
     font-size: x-small;
+    align-items: center;
   }
 
   .cards-addtocart img{
-
-    height: 20vh;
+    height: 5vh;
   }
+
   .navbar button:last-child {
     padding: 6px 10px;
     font-size: 14px;
