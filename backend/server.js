@@ -13,8 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: "https://mini-e-commerce-website-gqfq.vercel.app",
-  credentials: true
-}));
+ }));
 app.use("/upload",express.static("upload"))
 
 
