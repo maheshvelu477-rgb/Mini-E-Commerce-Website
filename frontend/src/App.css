@@ -110,7 +110,7 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 8px 16px;
-   }
+  }
 
   .navbar img {
     width: 30px;
@@ -156,7 +156,7 @@
 
   }
   .product-container{
-    padding-top: 50px;      
+    padding-top: 40px;      
     gap: 15px;
   }
 
@@ -200,11 +200,10 @@
 
 /* ***************** ProductList.jsx **************** */
 .product-container {
-  margin-top:160px ;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  padding-top: 30px;
+  padding-top: 60px;
 }
 
 .product-cards {
