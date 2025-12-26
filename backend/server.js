@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://mini-e-commerce-website-gqfq.vercel.app",
+  origin: "https://mini-e-commerce-website-frontend.onrender.com",
  }));
 app.use("/upload",express.static("upload"))
 
