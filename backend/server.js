@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://mini-e-commerce-web.onrender.com", // frontend URL
+  origin: "https://mini-e-commerce-website-project.onrender.com/",
   credentials: true
 }));
 app.use("/upload",express.static("upload"))
