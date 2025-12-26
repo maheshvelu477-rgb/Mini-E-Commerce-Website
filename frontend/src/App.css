@@ -47,7 +47,10 @@
   outline: none;
   border-radius: 4px 0 0 4px;
   font-size: 16px;
-}
+ }
+ .search input::placeholder{
+  text-indent:20px;
+ }
 
 .search button {
   padding: 10px 16px;
